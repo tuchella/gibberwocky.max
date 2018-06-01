@@ -139,7 +139,10 @@ let Gibber = {
       if( obj.sequences[ methodName ][ id ] ) {
         let s = obj.sequences[ methodName ][ id ]
         let markers = obj.markup.textMarkers[ s.values.patternName ]
-        if( Array.isArray( markers ) ) {
+        if( markers === undefined ) {
+          markers = []
+          obj.markup.textMarkers[ s.values.patternName ] = markers
+        }else if( Array.isArray( markers ) ) {
           markers.forEach( m => m.clear() )
         }else{
           let count = 0
