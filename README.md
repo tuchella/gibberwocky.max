@@ -26,3 +26,12 @@ Note that this is a reference for all three gibberwocky systems (gibberwocky.liv
 Outside of the Max help patcher, there are a bunch of included tutorials in the browser-interface to get you started using gibberwocky.
 
 Feel free to report issues & feature requests [here](https://github.com/worldmaking/max_gibberwocky_package/issues)
+
+## How to build
+
+* Install [npm](https://www.npmjs.com/get-npm) by installing node.js
+* Change to the './html' directory (where you checked out this repo)
+* Install [gulp](https://gulpjs.com/)
+* Install many node modules `npm install browserify vinyl-transform vinyl-source-stream watchify babelify gulp-util babel-core codemirror babel-polyfill big.js marked`
+* Run the `gulp build`
+* Then run `node munge.js`
