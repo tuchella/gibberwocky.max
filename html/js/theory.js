@@ -43,7 +43,11 @@ let Note = {
     let midiValue
 
     if( typeof value === 'string' ) { 
-      midiValue = this.convertStringToMIDI( value )
+      if( value == '.' ) { // makes the given note a rest
+        midiValue = null;
+      } else {
+        midiValue = this.convertStringToMIDI( value )
+      }
     } else {
       midiValue = Scale.master.getMIDINumber( value )
     }
